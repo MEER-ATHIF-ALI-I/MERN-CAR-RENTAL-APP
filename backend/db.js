@@ -1,17 +1,22 @@
 const mongoose = require("mongoose");
 
-var mongoURL = process.env.MONGODB_URL
+function connectDB(){
 
-mongoose.connect(mongoURL , {useUnifiedTopology:true , useNewUrlParser:true})
+    mongoose.connect('mongodb+srv://athif:Ryzenathif@cluster0.t5pyu.mongodb.net/athifcars' , {useUnifiedTopology: true , useNewUrlParser: true})
 
-var db = mongoose.connection
+    const connection = mongoose.connection
 
-db.on('connected' , ()=>{
-    console.log('Mongo DB Connection Successfull');
-})
+    connection.on('connected' , ()=>{
+        console.log('Mongo DB Connection Successfull')
+    })
 
-db.on('error' , ()=>{
-    console.log(`Mongo DB Connection failed`);
-})
+    connection.on('error' , ()=>{
+        console.log('Mongo DB Connection Error')
+    })
 
-module.exports =mongoose
+
+}
+
+connectDB()
+
+module.exports = mongoose
