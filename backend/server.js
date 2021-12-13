@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const dbConnection = require('./db')
+const usersRoute = require('./routes/usersRoute')
+const carsRoute = require('./routes/carsRoute')
+const bookingsRoute = require('./routes/bookingsRoute')
+
 app.use(express.json());
 
 app.use("/api/cars/", require("./routes/carsRoute"));
