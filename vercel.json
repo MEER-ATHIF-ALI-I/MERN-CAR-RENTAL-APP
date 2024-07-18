@@ -1,15 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "backend/server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://mern-car-rental-app.onrender.com/api/:match*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
