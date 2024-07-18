@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "nodemon backend/server.js",
+        "src": "backend",
         "use": "@vercel/node"
       }
     ],
