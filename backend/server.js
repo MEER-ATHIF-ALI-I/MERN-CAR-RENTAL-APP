@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
+import cors from 'cors';
 const Car = require('./models/carModel');
 const port = process.env.PORT || 5000;
 const dbConnection = require ('./db');
 app.use(express.json());
+app.use(cors({
+  origin:["https://mern-car-rental-app.vercel.app/"],
+  methods:["GET","POST", "PUT", "DELETE"],
+  credentials: true
+}))
 const path = require("path");
 const usersRoute = require('./routes/usersRoute')
 const carsRoute = require('./routes/carsRoute')
