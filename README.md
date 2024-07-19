@@ -3,4 +3,4 @@ This is a Full Stack (MERN) car rental Application with admin panel & ant design
 Node JS for Runtime environment , Express JS for Backend Routing and Mongo DB for Database
 
 
-Heroku-link: https://mern-athifcars-rental-app.herokuapp.com/ <br>
+Heroku-link: https://mern-car-rental-app.vercel.app/ <br>
